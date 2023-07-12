@@ -1,6 +1,7 @@
 # Distribution / packaging
 lib/
 node_modules/
+cache/
 
 # Environments
 .env
