@@ -6,11 +6,11 @@ import {CommonBase} from "forge-std/Base.sol";
 import {StdCheats} from "forge-std/StdCheats.sol";
 import {StdAssertions} from "forge-std/StdAssertions.sol";
 
-import {SimpleERC20, _INITIAL_SUPPLY_} from "@base/SimpleERC20.sol";
+import {_INITIAL_SUPPLY_} from "@base/SimpleERC20.sol";
 
-import {IERC20Metadata} from "@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol";
+import {IERC20} from "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
-interface ISimpleERC20Test {
+interface IDataStructs {
     struct DealData {
         address receiver;
         uint8 giveAmount;
@@ -24,7 +24,7 @@ interface ISimpleERC20Test {
     }
 }
 
-interface IReportTest {
+interface IReportDataStructs {
     struct ReportData {
         uint8 giveAmount;
         address receiver;
@@ -36,16 +36,16 @@ interface IReportTest {
 }
 
 library SerializeHelper {
-    // Note: The resultant contract address for 'vm' is hard-coded at
-    // address(uint160(uint256(keccak256("hevm cheat code"))))), which
-    // is 0x7109709ECfa91a80626fF3989D68f67F5b1DD12D.
+    // Cheat code address, 0x7109709ECfa91a80626fF3989D68f67F5b1DD12D.
+    address constant VM_ADDRESS =
+        address(uint160(uint256(keccak256("hevm cheat code"))));
 
     function serialize(
         uint256 _value,
         string calldata _objectKey,
         string calldata _valueKey
     ) public returns (string memory _serialized) {
-        Vm vm = Vm(0x7109709ECfa91a80626fF3989D68f67F5b1DD12D);
+        Vm vm = Vm(VM_ADDRESS);
 
         _serialized = vm.serializeUint(_objectKey, _valueKey, _value);
     }
@@ -55,7 +55,7 @@ library SerializeHelper {
         string calldata _objectKey,
         string calldata _valueKey
     ) public returns (string memory _serialized) {
-        Vm vm = Vm(0x7109709ECfa91a80626fF3989D68f67F5b1DD12D);
+        Vm vm = Vm(VM_ADDRESS);
 
         _serialized = vm.serializeAddress(_objectKey, _valueKey, _value);
     }
@@ -65,7 +65,7 @@ library SerializeHelper {
         string calldata _objectKey,
         string calldata _valueKey
     ) public returns (string memory _serialized) {
-        Vm vm = Vm(0x7109709ECfa91a80626fF3989D68f67F5b1DD12D);
+        Vm vm = Vm(VM_ADDRESS);
 
         _serialized = vm.serializeString(_objectKey, _valueKey, _value);
     }
@@ -73,8 +73,8 @@ library SerializeHelper {
 
 abstract contract SimpleERC20ReportRecorder is
     CommonBase,
-    ISimpleERC20Test,
-    IReportTest
+    IDataStructs,
+    IReportDataStructs
 {
     using SerializeHelper for *;
 
@@ -88,10 +88,10 @@ abstract contract SimpleERC20ReportRecorder is
         );
 
         // Read data.
-        bytes memory _inputData = readJson(_outputFile);
+        bytes memory _inputData = __readJson(_outputFile);
 
         // Parse data.
-        string memory _outputData = parseJson(
+        string memory _outputData = __parseJson(
             _inputData,
             _dealData,
             _tokenData
@@ -101,9 +101,9 @@ abstract contract SimpleERC20ReportRecorder is
         vm.writeJson(_outputData, _outputFile);
     }
 
-    function readJson(
+    function __readJson(
         string memory _file
-    ) public view returns (bytes memory _fileData) {
+    ) private view returns (bytes memory _fileData) {
         // Read file. If file doesn't exist, return empty bytes.
         try vm.readFile(_file) returns (string memory _fileStr) {
             _fileData = bytes(_fileStr).length > 0
@@ -114,16 +114,16 @@ abstract contract SimpleERC20ReportRecorder is
         }
     }
 
-    function parseJson(
+    function __parseJson(
         bytes memory _prevData,
         DealData memory _dealData,
         TokenData memory _tokenData
-    ) public returns (string memory _outputData) {
-        // Collect all debt data.
+    ) private returns (string memory _outputData) {
         uint256 _dataLength = 32 * 6;
         uint256 _numElements = _prevData.length / _dataLength;
         bytes memory _chunk = new bytes(_dataLength);
 
+        // Collect data.
         for (uint256 i; i <= _numElements; i++) {
             ReportData memory _reportData;
 
@@ -158,15 +158,15 @@ abstract contract SimpleERC20ReportRecorder is
             _dealDataObj.serialize("level_2", "deal_data");
 
             // Package TokenData object.
-            _reportData.balanceOfCreator.serialize(
-                "token_data",
-                "balance_of_creator"
-            );
             _reportData.balanceOfReceiver.serialize(
                 "token_data",
                 "balance_of_receiver"
             );
-            vm.serializeAddress("token_data", "token", _reportData.token);
+            _reportData.balanceOfCreator.serialize(
+                "token_data",
+                "balance_of_creator"
+            );
+            _reportData.token.serialize("token_data", "token");
             string memory _termsObj = _reportData.totalSupply.serialize(
                 "token_data",
                 "total_supply"
@@ -196,10 +196,7 @@ contract SimpleERC20Test is
 
     function setUp() public {}
 
-    function testSimpleERC20_Deal(
-        address _token,
-        DealData memory _dealData
-    ) public {
+    function testSimpleERC20(address _token, DealData memory _dealData) public {
         // Housekeeping.
         vm.assume(uint256(uint160(_token)) > 10);
 
@@ -215,7 +212,7 @@ contract SimpleERC20Test is
 
         // Save report.
         if (vm.envOr("RUN_REPORT", false))
-            recordDebtData("simple-erc20-deal", _dealData, _tokenData);
+            recordDebtData("simple-erc20", _dealData, _tokenData);
     }
 
     function _deploySimpleToken(address _token) internal {
@@ -230,7 +227,7 @@ contract SimpleERC20Test is
         address _receiver,
         uint256 _giveAmount
     ) internal returns (TokenData memory _tokenData) {
-        IERC20Metadata _simpleToken = IERC20Metadata(_token);
+        IERC20 _simpleToken = IERC20(_token);
 
         // Deal.
         vm.label(_receiver, "SIMPLE_ERC20_RECEIVER");

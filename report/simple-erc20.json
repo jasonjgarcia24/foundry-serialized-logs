@@ -1,0 +1,290 @@
+{
+  "report_run_0": {
+    "deal_data": {
+      "give_amount": 121,
+      "receiver": "0x0000000000000000000000000000000000002E89"
+    },
+    "token_data": {
+      "balance_of_creator": 2008,
+      "balance_of_receiver": 121,
+      "token": "0x000000000000000000000000000000000000100C",
+      "total_supply": 2129
+    }
+  },
+  "report_run_1": {
+    "deal_data": {
+      "give_amount": 0,
+      "receiver": "0xb999e1405583258f1d34dAAEA1Cc0d5ac44451fC"
+    },
+    "token_data": {
+      "balance_of_creator": 2008,
+      "balance_of_receiver": 0,
+      "token": "0xC66F546ba697109069fF61FCf452077a2590D2Ad",
+      "total_supply": 2008
+    }
+  },
+  "report_run_10": {
+    "deal_data": {
+      "give_amount": 112,
+      "receiver": "0x0000000000000000000000000000000000000167"
+    },
+    "token_data": {
+      "balance_of_creator": 2008,
+      "balance_of_receiver": 112,
+      "token": "0x0000000000000000000000000000000000000882",
+      "total_supply": 2120
+    }
+  },
+  "report_run_11": {
+    "deal_data": {
+      "give_amount": 254,
+      "receiver": "0xB37196C29E7E589dF7d00447381fDB6dF82643F4"
+    },
+    "token_data": {
+      "balance_of_creator": 2008,
+      "balance_of_receiver": 254,
+      "token": "0xB61e308e4F459A81Efe2F99814b4ec50b0de2A09",
+      "total_supply": 2262
+    }
+  },
+  "report_run_12": {
+    "deal_data": {
+      "give_amount": 18,
+      "receiver": "0x00000000000000000000000000000000000000E8"
+    },
+    "token_data": {
+      "balance_of_creator": 2008,
+      "balance_of_receiver": 18,
+      "token": "0x00000000000000000000000000000000000007a1",
+      "total_supply": 2026
+    }
+  },
+  "report_run_13": {
+    "deal_data": {
+      "give_amount": 19,
+      "receiver": "0x026fbCF2F8E5A0b969892202c02Cffd825eeDbd7"
+    },
+    "token_data": {
+      "balance_of_creator": 2008,
+      "balance_of_receiver": 19,
+      "token": "0x27A45A24bD1f53bE14EDC25e366ef977a6A01e76",
+      "total_supply": 2027
+    }
+  },
+  "report_run_14": {
+    "deal_data": {
+      "give_amount": 0,
+      "receiver": "0x54905763c38265Cb73660E3098728c14D45c8A62"
+    },
+    "token_data": {
+      "balance_of_creator": 2008,
+      "balance_of_receiver": 0,
+      "token": "0x63f8B7D708ee36dc8958bB8590C7f1aA17130545",
+      "total_supply": 2008
+    }
+  },
+  "report_run_15": {
+    "deal_data": {
+      "give_amount": 14,
+      "receiver": "0xEd8883553528b84E1D37eeC58D15B4F7880b1fe9"
+    },
+    "token_data": {
+      "balance_of_creator": 2008,
+      "balance_of_receiver": 14,
+      "token": "0xb5a69EE9d71FD4f79839af5De8Cd8ba04F5CAeDb",
+      "total_supply": 2022
+    }
+  },
+  "report_run_16": {
+    "deal_data": {
+      "give_amount": 170,
+      "receiver": "0x000000000000000000006D706C6545524332302e"
+    },
+    "token_data": {
+      "balance_of_creator": 2008,
+      "balance_of_receiver": 170,
+      "token": "0x000000000000000000000000fFFFFFffFFFFfffF",
+      "total_supply": 2178
+    }
+  },
+  "report_run_17": {
+    "deal_data": {
+      "give_amount": 136,
+      "receiver": "0x00000000000000000000000000000000000017CA"
+    },
+    "token_data": {
+      "balance_of_creator": 2008,
+      "balance_of_receiver": 136,
+      "token": "0x0000000000000000000000000000000000002Ab3",
+      "total_supply": 2144
+    }
+  },
+  "report_run_18": {
+    "deal_data": {
+      "give_amount": 254,
+      "receiver": "0x82F5d8313AbC4d29c6dD29b3Db2Ebb4d58561640"
+    },
+    "token_data": {
+      "balance_of_creator": 2008,
+      "balance_of_receiver": 254,
+      "token": "0x5FA75FB932aB9c254b018ff37a63Bd3F5aDbBBB3",
+      "total_supply": 2262
+    }
+  },
+  "report_run_19": {
+    "deal_data": {
+      "give_amount": 254,
+      "receiver": "0xB92D56b348269B76c0E933da9E21E0d7CCA8b933"
+    },
+    "token_data": {
+      "balance_of_creator": 2008,
+      "balance_of_receiver": 254,
+      "token": "0x1d8494F63e381E68816D40a724b374c6562eCaBB",
+      "total_supply": 2262
+    }
+  },
+  "report_run_2": {
+    "deal_data": {
+      "give_amount": 255,
+      "receiver": "0x6d82F7a447a47847188A51A60AD9f315998a2E14"
+    },
+    "token_data": {
+      "balance_of_creator": 2008,
+      "balance_of_receiver": 255,
+      "token": "0xEc7125316B30ee350E0797Ca40343c343b4Fd571",
+      "total_supply": 2263
+    }
+  },
+  "report_run_20": {
+    "deal_data": {
+      "give_amount": 1,
+      "receiver": "0xC36f7b215272208AC68228165a95469E9aED5bdb"
+    },
+    "token_data": {
+      "balance_of_creator": 2008,
+      "balance_of_receiver": 1,
+      "token": "0x558F26deD41974A08FA9A1204fC107F9B0e75E04",
+      "total_supply": 2009
+    }
+  },
+  "report_run_21": {
+    "deal_data": {
+      "give_amount": 67,
+      "receiver": "0x0ba97Ae4CB928c7FFB0BB8cA0919bC4dc64bE50F"
+    },
+    "token_data": {
+      "balance_of_creator": 2008,
+      "balance_of_receiver": 67,
+      "token": "0x474C20c1AE8CA028c8c5A9Ed7acF89c74910Ec99",
+      "total_supply": 2075
+    }
+  },
+  "report_run_22": {
+    "deal_data": {
+      "give_amount": 0,
+      "receiver": "0xaEcfcc45Ea65Eb9d25622C00483D2e6f7D239C89"
+    },
+    "token_data": {
+      "balance_of_creator": 2008,
+      "balance_of_receiver": 0,
+      "token": "0x31721E11037b86441023F811f30a42dBC252504E",
+      "total_supply": 2008
+    }
+  },
+  "report_run_23": {
+    "deal_data": {
+      "give_amount": 140,
+      "receiver": "0x66657220746f20746865207A65726f2061646472"
+    },
+    "token_data": {
+      "balance_of_creator": 2008,
+      "balance_of_receiver": 140,
+      "token": "0x0000000000000000000000000000000000002476",
+      "total_supply": 2148
+    }
+  },
+  "report_run_3": {
+    "deal_data": {
+      "give_amount": 65,
+      "receiver": "0x00000000000000000000000000000000000005a6"
+    },
+    "token_data": {
+      "balance_of_creator": 2008,
+      "balance_of_receiver": 65,
+      "token": "0x000000000000000000000000000000000000044C",
+      "total_supply": 2073
+    }
+  },
+  "report_run_4": {
+    "deal_data": {
+      "give_amount": 5,
+      "receiver": "0x0000000000000000000000000000000000000A65"
+    },
+    "token_data": {
+      "balance_of_creator": 2008,
+      "balance_of_receiver": 5,
+      "token": "0x558F26deD41974A08FA9A1204fC107F9B0e75E04",
+      "total_supply": 2013
+    }
+  },
+  "report_run_5": {
+    "deal_data": {
+      "give_amount": 193,
+      "receiver": "0x00000000000000000000000000000000000010b5"
+    },
+    "token_data": {
+      "balance_of_creator": 2008,
+      "balance_of_receiver": 193,
+      "token": "0x000000000000000000000000000000000000344f",
+      "total_supply": 2201
+    }
+  },
+  "report_run_6": {
+    "deal_data": {
+      "give_amount": 35,
+      "receiver": "0x000000000000000000000000000000000000025A"
+    },
+    "token_data": {
+      "balance_of_creator": 2008,
+      "balance_of_receiver": 35,
+      "token": "0x000000000000000000000000000000000000ff00",
+      "total_supply": 2043
+    }
+  },
+  "report_run_7": {
+    "deal_data": {
+      "give_amount": 121,
+      "receiver": "0xB61e308e4F459A81Efe2F99814b4ec50b0de2A09"
+    },
+    "token_data": {
+      "balance_of_creator": 2008,
+      "balance_of_receiver": 121,
+      "token": "0x254f70745aB4F54764ffF2dAE37a795CAFed2d38",
+      "total_supply": 2129
+    }
+  },
+  "report_run_8": {
+    "deal_data": {
+      "give_amount": 1,
+      "receiver": "0x83ba0135E65eC982c1d695969239573FaD792cE1"
+    },
+    "token_data": {
+      "balance_of_creator": 2008,
+      "balance_of_receiver": 1,
+      "token": "0x8634BC038337C265161a3629537868eb3Ebc4775",
+      "total_supply": 2009
+    }
+  },
+  "report_run_9": {
+    "deal_data": {
+      "give_amount": 4,
+      "receiver": "0x0000000000000000000000000000000000001337"
+    },
+    "token_data": {
+      "balance_of_creator": 2008,
+      "balance_of_receiver": 4,
+      "token": "0x0000000000000000000000000000000000001c96",
+      "total_supply": 2012
+    }
+  }
+}
